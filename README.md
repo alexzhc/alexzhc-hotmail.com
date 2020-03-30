@@ -6,8 +6,8 @@ Important features:
 
 1. ReadWriteMany
 
-    Export block volume by host NFS server and use kubernetes cluster ip as the NFS VIP. Workflow is demonstrated by the child project:
-    > https://github.com/alexzhc/volume-nfs-provisioner
+    Export block volume by host NFS server and use kubernetes cluster ip as the NFS VIP. Workflow is demonstrated by following child project
+    > volume nfs provisioner: https://github.com/alexzhc/volume-nfs-provisioner
 
 2. Fencing
 
@@ -18,8 +18,7 @@ Important features:
 
     A kubernetes job object that mounts a volume snapshort by file or block driver, then does backup to remote S3 or NFS target by rsync or lvmsync.
     >Ref: https://github.com/davidbartonau/lvm-thin-sendrcv
-    
-    >Ref: https://github.com/tasket/wyng-backup
+    <br/>https://github.com/tasket/wyng-backup
 
 4. Scheduler extension
 
