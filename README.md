@@ -5,11 +5,11 @@ Piraeus project builds cloud-native features that are tightly coupled with Kuber
 ## Important features:
 
 ### ReadWriteMany
-Export block volume by host NFS server and use kubernetes cluster ip as the NFS VIP. Workflow is demonstrated by following child project
+Export block volume by host NFS server and use kubernetes cluster ip as the NFS VIP. A workflow is demonstrated by following child project
 > volume nfs provisioner: https://github.com/alexzhc/volume-nfs-provisioner
 
 ### Fencing
-Instead of waiting for kubernetes node eviction timeout (5 minutes) and CSI detach timeout (6 minutes), calls kubernetes api to forcefully delete and reschedule pod right after DRBD has failed over the resource. It improves TTR (time to recover) from 11 minutes down to 30-60 minutes.
+Instead of waiting for kubernetes node eviction timeout (5 minutes) and CSI detach timeout (6 minutes), piraeus calls kubernetes api to forcefully delete and reschedule pod right after DRBD has failed over the resource. It improves TTR (time to recover) from 11 minutes down to 30-60 minutes.
 >Ref: https://docs.storageos.com/docs/concepts/fencing
 
 ### Remote Backup
@@ -18,7 +18,7 @@ A kubernetes job object that mounts a volume snapshort by file or block driver, 
 <br/>Ref: https://github.com/tasket/wyng-backup
 
 ### Scheduler extension
-Replace volume node affinity with a scheduler extention to schedule the pod on the node with local volume access (diskfull), and if not possible schedule the pod on the node with remote volume access (diskless), similar to Stork.
+Replace volume node affinity with a scheduler extention to schedule the pod on the node with local volume access (diskfull), and if not possible schedule the pod on the node with remote volume access (diskless), similar to basic function of Stork. 
 >Ref: https://kubernetes.io/docs/concepts/scheduling/scheduling-framework/
 
 ## Technical Stack
